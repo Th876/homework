@@ -85,8 +85,18 @@ console.log(wolfy);
 
 ////////////////////////////////
 // Yell at the Ninja Turtles
+
+/*Yell at the Ninja Turtles
+Create an array with the members of the ninja turtles 
+(Donatello, Leonardo, Raphael, Michaelangelo)
+Use a for of loop(not a typo - try it out! Try a for ofloop) 
+to call toUpperCase()on each of them and print out the result.*/
 ////////////////////////////////
 
+const ninjaturtles = ['Donatello', 'Leonardo', 'Raphael', 'Michaelangelo'];
+for (turtle of ninjaturtles) {
+    console.log(turtle.toUpperCase()); //print each element in uppercase
+}
 
 ////////////////////////////////
 // Methods, Revisited
