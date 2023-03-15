@@ -47,8 +47,41 @@ fizzBuzz();
 
 ////////////////////////////////
 // Wild Wild Life
-////////////////////////////////
+/*Wild Wild Life
+Use the following arrays to answer the questions below 
+(name,species ,age, hometown): You should be modifying 
+the elements by accessing them. It is up to you which methods 
+to use.
+1) Plantee just had her birthday; change Plantee's array 
+to reflect her being a year older.
 
+2) Change Wolfy's hometown from "Yukon Territory" to "Gotham City".
+
+3) Give D'Art a second hometown by adding "Hawkins"
+
+4) Porgee decides that Wolfy can't be named "Wolfy" anymore. 
+Remove "Wolfy" from the wolfyarray and replace it with "Gameboy".
+*/
+////////////////////////////////
+const wolfy = ["Wolfy", "wolf", 16, "Yukon Territory"]
+const sharky = ["Sharky", "shark", 20, "Left Coast"]
+const plantee = ["Plantee", "plant",  5000 , "Mordor"]
+const porgee = ["Porgee", "Porg", 186, "Ahch-To"]
+const dart = ["D'Art" , "Demogorgan Dog", 2, "Upside Down"]
+
+
+plantee[2] = 5001;
+console.log(plantee);
+
+wolfy[3] = "Gotham City";
+console.log(wolfy);
+
+dart.push("Hawkins");
+console.log(dart);
+
+wolfy.shift();
+wolfy.unshift("Gameboy");
+console.log(wolfy);
 
 ////////////////////////////////
 // Yell at the Ninja Turtles
