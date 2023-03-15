@@ -150,8 +150,9 @@ console.log(favMovies);
 //doesn't add anything because there's nothing between the parentheses
 
 console.log(favMovies.indexOf("Django Unchained"));
-favMovies.splice(14, 1);//remove Django
-favMovies.splice(14, 0, "Avatar"); //add Avatar
+favMovies.splice(14, 1, "Avatar");//remove Django & add on one line
+// favMovies.splice(14, 0, "Avatar"); //add Avatar. 
+//could do this in one line
 console.log(favMovies);
 //yes, it permanently altered the array
 
@@ -196,9 +197,126 @@ console.log(whereIsWaldo);
 
 ////////////////////////////////
 //  Excited Kitten
+
+/*Write code that logs "Love me, pet me! HSSSSSS!" 20 times.
+For every even number in your loop, log "...human...why you 
+taking pictures of me?...", "...the catnip made me do it...", 
+or "...why does the red dot always get away..." at random.
+*/
 ////////////////////////////////
 
+const kittyTalk = ["Love me, pet me! HSSSSSS!", 
+"...human...why you taking pictures of me?...",
+"...the catnip made me do it...", 
+"...why does the red dot always get away..."
+];
+
+//
+let meow = 0;
+for(let i = 1; i < 20; i++) {
+    if(i % 2 === 0) {
+        meow = Math.floor(Math.random() * 3);
+        console.log(kittyTalk[meow]);
+    } else {
+        console.log("Love me, pet me! HSSSSSS!")
+    }
+}
 
 ////////////////////////////////
 //  Find the Median
+/*Find the median number in the following numsarray, 
+then console.log that number.
+hint if you check the length of the array / 2, 
+you might get not get a whole number. 
+In which case, look into Math.floor( // something )*/
 ////////////////////////////////
+const nums = [
+    14,11,16,15,13,16,15,17,19,11,12,14,19,11,15,17,11,
+    18,12,17,12,71,18,15,12
+];
+
+// console.log(nums.sort()); //must first sort the array
+// const medianNum = Math.floor(nums.length / 2);
+// console.log(medianNum);
+// 
+
+
+function median(numbers) {
+    let arrayLength = numbers.sort().length; //sort array & find length
+    let middle = Math.floor(arrayLength/2); //formula for finding median
+   if(numbers % 2 != 0) { //if odd
+    return numbers[middle]; //return this
+   } else {
+    return (numbers[middle - 1] + numbers[middle]) / 2;//if even formula to return
+   }
+}
+
+console.log(median([14,11,16,15,13,16,15,17,19,11,12,14,19,11,15,17,11,
+    18,12,17,12,71,18,15,12]));
+
+
+// Expected output:
+// => 15
+
+
+//EXTRA PRACTICE
+
+/*
+Hungry for More?
+Choose one that you didn't get to solve in lab
+
+Fibonnacci (morning lab)
+Checkerboard (morning lab)
+TwoDArray (afternoon lab)
+Finish all 3 Lab Questions
+Return of the Closets
+Below, we've given you examples of Kristyn and Thom's closets modeled as data in JavaScript. Use this data to answer the following questions.
+
+const kristynsCloset = [
+  "left shoe",
+  "cowboy boots",
+  "right sock",
+  "Per Scholas hoodie",
+  "green pants",
+  "yellow knit hat",
+  "marshmallow peeps"
+];
+
+// Thom's closet is more complicated. Check out this nested data structure!!
+const thomsCloset = [
+  [
+    // These are Thom's shirts
+    "grey button-up",
+    "dark grey button-up",
+    "light blue button-up",
+    "blue button-up",
+  ],[
+    // These are Thom's pants
+    "grey jeans",
+    "jeans",
+    "PJs"
+  ],[
+    // Thom's accessories
+    "wool mittens",
+    "wool scarf",
+    "raybans"
+  ]
+];
+Alien Attire
+Kristyn's left shoe has traveled through time and space and turned up in Thom's accessories drawer! Remove Kristyn's shoe from the array and save it to the variable kristynsShoe. Use that variable to add Kristyn's lost shoe to Thom's accessories array.
+Dress Us Up
+Modify your code to put together 3 separate outfits for Kristyn and Thom. Put the output in a sentence to tell us what we'll be wearing. Mix and match!
+🔴 The commit message should read:
+"Kristyn and Thom have their outfits ready for class - array practice"
+Dirty Laundry
+Continue looking at the closet arrays:
+
+Time to do laundry - loop through Kristyn's closet and log the sentence "WHIRR: Now washing (item)" for each item in the array.
+Inventory
+Thom wants to do inventory on his closet. Using bracket notation, log the arrays containing all of Thom's shirts, pants, and accessories.
+🔴 The commit message should read:
+"Hungry for More: I tackled..."
+Technical Requirements
+A JavaScript file that runs without syntax errors (comment out stuff that doesn't work)
+At least one commit message per problem
+*/
